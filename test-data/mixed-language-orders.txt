@@ -1,0 +1,36 @@
+1.
+দাদা ২ কেজি মাছ আর ১ কেজি চাল দিন।
+
+Expected:
+Fish - 2 kg
+Rice - 1 kg
+
+----------------------------------
+
+2.
+Give me 3 chickens আর ৫০০ গ্রাম আলু।
+
+Expected:
+Chicken - 3 pcs
+Potato - 500 g
+
+----------------------------------
+
+3.
+Tomorrow morning 10 AM delivery, 2 litre milk.
+
+Expected:
+Milk - 2 L
+Delivery Time:
+Tomorrow 10:00 AM
+
+----------------------------------
+
+4.
+এক কেজি পেঁয়াজ, two tomato, আর fresh fish দিবেন।
+
+Expected:
+Onion - 1 kg
+Tomato - 2 pcs
+Special Instruction:
+Fresh fish
