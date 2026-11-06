@@ -23,7 +23,8 @@ export type OrderDashboardStats = {
 };
 
 /** Calculates dashboard metrics from browser-saved orders without mutating them. */
-export function getOrderDashboardStats(orders: SavedOrder[], now = new Date()): OrderDashboardStats {
+export function getOrderDashboardStats(orders: SavedOrder[], now?: Date ): OrderDashboardStats {
+  const currentDate = now ?? new Date();
   const itemTotals = new Map<string, RankedItem>();
   const confidences: number[] = [];
   const confidenceDistribution = { high: 0, medium: 0, low: 0, unavailable: 0 };
@@ -32,7 +33,7 @@ export function getOrderDashboardStats(orders: SavedOrder[], now = new Date()): 
 
   for (const savedOrder of orders) {
     const orderDate = new Date(savedOrder.createdAt);
-    if (!Number.isNaN(orderDate.getTime()) && isSameLocalDay(orderDate, now)) ordersToday += 1;
+    if (!Number.isNaN(orderDate.getTime()) && isSameLocalDay(orderDate, currentDate)) ordersToday += 1;
 
     const confidence = savedOrder.order.confidence;
     if (confidence === null) {
